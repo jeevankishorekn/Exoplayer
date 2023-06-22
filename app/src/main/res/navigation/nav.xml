@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/playerFragment">
+
+    <fragment
+        android:id="@+id/playerFragment"
+        android:name="com.jeevan.exoplayer.fragments.PlayerFragment"
+        android:label="fragment_player"
+        tools:layout="@layout/fragment_player" >
+        <action
+            android:id="@+id/action_playerFragment_to_audioPlayerFragment"
+            app:destination="@id/audioPlayerFragment" />
+        <action
+            android:id="@+id/action_playerFragment_to_deviceMusicFragment"
+            app:destination="@id/deviceMusicFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/deviceMusicFragment"
+        android:name="com.jeevan.exoplayer.fragments.DeviceMusicFragment"
+        android:label="fragment_device_music"
+        tools:layout="@layout/fragment_device_music" >
+        <action
+            android:id="@+id/action_deviceMusicFragment_to_onlineMusicFragment"
+            app:destination="@id/onlineMusicFragment" />
+        <action
+            android:id="@+id/action_deviceMusicFragment_to_playerFragment"
+            app:destination="@id/playerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onlineMusicFragment"
+        android:name="com.jeevan.exoplayer.fragments.OnlineMusicFragment"
+        android:label="fragment_online_music"
+        tools:layout="@layout/fragment_online_music" >
+        <action
+            android:id="@+id/action_onlineMusicFragment_to_deviceMusicFragment"
+            app:destination="@id/deviceMusicFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/audioPlayerFragment"
+        android:name="com.jeevan.exoplayer.AudioPlayerFragment"
+        android:label="fragment_audio_player"
+        tools:layout="@layout/fragment_audio_player" >
+        <action
+            android:id="@+id/action_audioPlayerFragment_to_playerFragment"
+            app:destination="@id/playerFragment" />
+    </fragment>
+</navigation>

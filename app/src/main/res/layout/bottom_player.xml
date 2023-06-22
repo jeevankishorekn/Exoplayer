@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="10dp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_player_view"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background = "?colorTertiaryContainer">
+
+
+        <ImageView
+            android:id="@+id/playSongImage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:padding="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/music_icon" />
+
+        <ImageView
+            android:id="@+id/playSkipPrevious"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintBottom_toBottomOf="@+id/playArtist"
+            app:layout_constraintEnd_toStartOf="@+id/playPause"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/playTitle"
+            app:tint = "?colorOnSurface"
+            app:layout_constraintTop_toTopOf="@+id/playTitle"
+            app:srcCompat="@drawable/ic_baseline_skip_previous_24" />
+
+        <TextView
+            android:id="@+id/playTitle"
+            android:layout_width="150dp"
+            android:singleLine="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:ellipsize="marquee"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:fontFamily="@font/queensides"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/guideline2"
+            app:layout_constraintStart_toEndOf="@+id/playSongImage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.9" />
+
+        <TextView
+            android:id="@+id/playArtist"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:fontFamily="@font/queensides_medium"
+            android:singleLine="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:ellipsize="marquee"
+            android:textColor="#808080"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/playSongImage"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            app:layout_constraintVertical_bias="0.1" />
+
+        <ImageView
+            android:id="@+id/playSkipForward"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintBottom_toBottomOf="@+id/playPause"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/playPause"
+            app:layout_constraintTop_toTopOf="@+id/playPause"
+            app:tint = "?colorOnSurface"
+            app:srcCompat="@drawable/ic_baseline_skip_next_24" />
+
+        <ImageView
+            android:id="@+id/playPause"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:tint = "?colorOnSurface"
+            app:layout_constraintBottom_toBottomOf="@+id/playSkipPrevious"
+            app:layout_constraintEnd_toStartOf="@+id/playSkipForward"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/playSkipPrevious"
+            app:layout_constraintTop_toTopOf="@+id/playSkipPrevious"
+            app:srcCompat="@drawable/ic_baseline_play_arrow_24" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="50dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
